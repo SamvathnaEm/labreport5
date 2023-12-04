@@ -2,11 +2,17 @@
 
 ## Part 1 - Debugging Scenario
 
-1. The original post from a student with a screenshot showing a symptom and a description of a guess at the bug/some sense of what the failure-inducing input is
+1. The original post on EdStem:
 
-The original post on EdStem:
+Student(Sam): 
+
 Hello guys, 
-I have some issues with my code in a ```ListExamples.java``` class specifically in the merge method since it doesn't pass all of the tests on the test file ```TestListExamples.java```. I think the bugs might be in the if-conditional statement that I set but I am not too sure if that will be the case to cause the errors.
+I have some issues with my code in a ```ListExamples.java``` class specifically in the merge method since it doesn't pass all of the tests on the test file ```TestListExamples.java```. I think the bugs might be in the if-conditional statement that I set in line #15, but I am not too sure if it will be the only thing to cause the errors. Especially, I don't have any idea how to set up other conditional statements to satisfy the requirements. Here are the screenshots showing a symptom on the terminal.
+
+
+
+
+
 
 
 
