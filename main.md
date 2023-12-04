@@ -7,7 +7,7 @@
 Student(Sam): 
 
 Hello guys, 
-I have some issues with my code in a ```ListExamples.java``` class specifically in the merge method since it doesn't pass all of the tests on the test file ```TestListExamples.java```. I think the bugs might be in the if-conditional statement that I set in line #15, but I am not too sure if it will be the only thing that causes the errors. Other than this, I don't know how to set up other conditional statements to satisfy the requirements. Here are the screenshots showing a symptom on the terminal, along with the code in ```ListExamples.java``` and ```TestListExamples.java```.
+I have some issues with my code in a ```ListExamples.java``` class, specifically in the merge method, because it doesn't pass all of the tests from ```TestListExamples.java```. I think the bugs might be in the if-conditional statement that I set in line #15, but I'm not too sure if it will be the only thing that causes the errors. Other than this, I don't know how to set up other conditional statements to satisfy the requirements. Here are the screenshots showing a symptom on the terminal, along with the code in ```ListExamples.java``` and ```TestListExamples.java```.
 
 ![Image](1new.png)
 ![Image](2new.png)
@@ -15,7 +15,7 @@ I have some issues with my code in a ```ListExamples.java``` class specifically 
 
 **2. TA's response:**
 Hi Sam,
-You're right. I also think your code in line #15 might be the leading cause of the tests' failure. I suggest you develop a new if-conditional statement in line #15 again and repurpose the behavior of the merge method. I think the behavior in your merge method seems to be different from the requirements. Hence, it will produce a different output. Instead of comparing the length of the string within each element from each list, I recommend comparing the string values to maintain alphabetical order. Let me know if you have any further questions.
+You're right. I also think your code in line #15 might be the leading cause of the tests' failure. I suggest you develop a new if-conditional statement in line #15 again and repurpose the behavior of the merge method. I think the behavior in your merge method seems to be different from the requirements. Hence, it will produce a different output. Instead of comparing the length of the string within each element from the lists, I recommend comparing the string values to maintain alphabetical order. Let me know if you have any further questions.
 
 **3. Another screenshot/terminal output showing what information the student got from trying that, and a clear description of what the bug is**
 
@@ -32,6 +32,8 @@ It passes all the tests!
 
 **The file & directory structure needed:**
 
+![Image]((4).png)
+
 * ```/lib``` directory contains ```hamcrest-core-1.3.jar``` and ```junit-4.13.2.jar``` to run junit test
 * ```ListExamples.java``` is the java class that contains the code for the ```merge``` function.
 * ```test.sh``` is a bash script to run the tests in ```TestListExamples.java```
@@ -39,7 +41,7 @@ It passes all the tests!
 
 **The contents of each file before fixing the bug:**
 
-Here's the contents of ListExamples.java before fixing the bug:
+Here's the contents of ```ListExamples.java``` before fixing the bug:
 ```
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +81,7 @@ class ListExamples {
 }
 ```
 
-Here's the contents of TestListExamples.java
+Here's the contents of ```TestListExamples.java```
 
 ```
 import java.util.ArrayList;
@@ -140,4 +142,4 @@ java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUn
 To fix the bug above, we would need to understand the overall purpose of the merge function. Since it requires us to return a merged list that contains the elements from both lists in sorted order, we would need to repurpose the if-conditional statement in line #15 to fix the bug. Instead of comparing the size of each string within each element from the list, we should use the ```compareTo()``` method, which is part of the string class in Java. This method compares two strings lexicographically based on the Unicode value of each character in the strings. So, we are going to modify the if-conditional statement in line #15 to ```list1.get(index1).compareTo(list2.get(index2)) < 0```. The ```list1.get(index1).compareTo(list2.get(index2))``` would return the negative value if the string in list1 is lexicographically smaller than the the string in ```list2```. Therefore, if that comparison is less than 0, the element in ```list1``` will be added first. This would ensure that the merged list has the correct order of elements in an alphabetical order during the merging process. 
 
 ## Part 2 - Reflection
-A couple of things from my lab experience in the second half of this quarter that I didn't know before is creating a grading script to auto-grade student programming assignments. I have wondered how those things work behind the scenes ever since I took the introductory Java course. I am now able to write a grading script for programming assignments by myself and even know some useful commands like ```find``` , ```grep```, ```less``` that help facilitate the grading process in counting and finding the student file submissions.
+A couple of things from my lab experience in the second half of this quarter that I didn't know before is writing a grading script to auto-grade student programming assignments. I have wondered how those stuffs work behind the scenes ever since I took the introductory Java course. I am now able to write a grading script for programming assignments by myself and even know some useful commands like ```find``` , ```grep```, ```less``` that help facilitate the grading process in counting and finding the student file submissions.
